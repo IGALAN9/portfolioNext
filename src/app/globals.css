@@ -32,15 +32,27 @@
   .icon-tile {
     @apply rounded-2xl bg-white/5 ring-1 ring-white/10 shadow-md;
   }
+  .card {
+    @apply rounded-3xl bg-white/7 ring-1 ring-white/10 shadow-2xl backdrop-blur;
+  }
+  .card-elev {
+    box-shadow: 0 14px 28px rgba(0,0,0,.45), 0 8px 10px rgba(0,0,0,.3);
+  }
+  .pill {
+    @apply inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-xs tracking-wide;
+  }
+  .dot {
+    @apply size-3 rounded-full bg-white shadow-[0_0_0_3px_rgba(255,255,255,0.15)];
+  }
 }
 
 /* Background gradien global */
 html, body {
   height: 100%;
-  background:
-    radial-gradient(1200px 600px at 85% 0%, color-mix(in oklab, var(--color-accent) 18%, var(--color-bg-900)) 0%, transparent 60%),
-    radial-gradient(900px 500px at 10% 70%, color-mix(in oklab, var(--color-brand) 16%, var(--color-bg-900)) 0%, transparent 60%),
-    linear-gradient(180deg, var(--color-bg-800), var(--color-bg-900));
+  background: radial-gradient(1000px 600px at 70% 10%, var(--color-bg-800) 0%, var(--color-bg-900) 80%);
   color: white;
   font-family: var(--font-sans);
 }
+
+
+
