@@ -38,11 +38,70 @@
   .card-elev {
     box-shadow: 0 14px 28px rgba(0,0,0,.45), 0 8px 10px rgba(0,0,0,.3);
   }
+    /* Efek hover pada ikon / kartu Skills */
+  .skill-card {
+    @apply rounded-2xl bg-white/5 ring-1 ring-white/10 shadow-md p-3 transition-all duration-300 ease-out;
+  }
+  .skill-card:hover {
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(255,255,255,.08), 0 10px 20px rgba(0,0,0,.45);
+    background-color: color-mix(in oklab, white 10%, transparent);
+  }
+  .skill-icon {
+    @apply transition-transform duration-300 ease-out;
+  }
+  .skill-card:hover .skill-icon {
+    transform: scale(1.15);
+  }
   .pill {
     @apply inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-xs tracking-wide;
   }
   .dot {
     @apply size-3 rounded-full bg-white shadow-[0_0_0_3px_rgba(255,255,255,0.15)];
+  }
+    /* Glow halus untuk garis & titik */
+  .glow-soft { box-shadow: 0 0 0 6px color-mix(in oklab, white 18%, transparent); }
+
+  /* Dotted line bergerak pelan */
+  @keyframes dash-scroll {
+    from { background-position: 0 center; }
+    to   { background-position: 16px center; }
+  }
+  .anim-dash {
+    animation: dash-scroll 1.6s linear infinite;
+  }
+
+  /* Elevation card saat hover */
+  .card-hover {
+    @apply transition-transform duration-300 ease-out;
+  }
+  .card-hover:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 26px 50px rgba(0,0,0,.45);
+  }
+
+  /* Tombol micro-interaction */
+  .btn-soft {
+    @apply rounded-xl bg-white/80 px-3 py-1.5 text-xs font-medium text-black transition;
+  }
+  .btn-soft:hover { @apply bg-white; transform: translateY(-1px) scale(1.03); }
+    /* Kedip kursor */
+  @keyframes caret-blink {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+  }
+  .typing-caret {
+    position: relative;
+  }
+  .typing-caret::after {
+    content: "";
+    display: inline-block;
+    width: 2px;                 /* tebal kursor */
+    height: 1em;                /* tinggi mengikuti font */
+    margin-left: 4px;
+    background: currentColor;   /* warna mengikuti teks */
+    animation: caret-blink 1s step-end infinite;
+    vertical-align: -0.15em;
   }
 }
 

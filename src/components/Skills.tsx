@@ -31,23 +31,24 @@ const nonCoding: Icon[] = [
   { src: "/icons/figma.png", alt: "Figma" },
 ];
 
-function RowIcons({ items, size = 64, gap = "gap-5" }: { items: Icon[]; size?: number; gap?: string }) {
+function RowIcons({ items }: { items: Icon[] }) {
   return (
-    <div className={`flex flex-wrap ${gap}`}>
+    <div className="flex flex-wrap gap-6">
       {items.map((it) => (
-        <div key={it.alt} className="icon-tile p-2">
+        <div key={it.alt} className="skill-card">
           <Image
             src={it.src}
             alt={it.alt}
-            width={size}
-            height={size}
-            className="size-12 md:size-16 object-contain"
+            width={96}
+            height={96}
+            className="skill-icon size-16 md:size-20 object-contain"
           />
         </div>
       ))}
     </div>
   );
 }
+
 
 export default function Skills() {
   return (
@@ -83,21 +84,15 @@ export default function Skills() {
         </div>
 
         {/* Kolom kanan */}
-        <div className="space-y-6 md:pt-14">
+        <div className="space-y-6 md:pt-22">
           <p className="text-2xl/7 font-medium">Backend</p>
           {/* Susun ikon backend memanjang seperti mockup */}
           <div className="mt-2 flex flex-wrap items-center gap-6 md:gap-8">
-            {backend.map((it) => (
-              <div key={it.alt} className="icon-tile p-3">
-                <Image
-                  src={it.src}
-                  alt={it.alt}
-                  width={72}
-                  height={72}
-                  className="size-14 md:size-[72px] object-contain"
-                />
+              <div>
+                <div className="mt-4">
+                <RowIcons items={backend} />
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </div>
