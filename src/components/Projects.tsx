@@ -2,6 +2,7 @@
 import Image from "next/image";
 
 type Project = {
+  slug: string;
   title: string;
   desc: string;
   icon: string;
@@ -11,25 +12,25 @@ type Project = {
 };
 
 const row1: Project[] = [
-  { title: "StockFlow",
+  { title: "StockFlow", slug: "stockflow",
     desc: "Proyek tim menggunakan Electron dan MongoDB untuk PT Hanica Sukses Makmur. Fokus pada backend, perhitungan stok, dan integrasi realtime ke frontend.",
     icon: "/projects/stockflow.png", period: "Feb - Jun", year: 2025 },
-  { title: "BalancedBliss",
+  { title: "BalancedBliss", slug: "balancedbliss",
     desc: "Website tips kesehatan (Angular/Bootstrap/PostgreSQL). Fitur login system, auto-logout, dan peningkatan kapabilitas full-stack.",
     icon: "/projects/balancedbliss.png", period: "Feb - Jun", year: 2025 },
 ];
 
 const row2: Project[] = [
-  { title: "Flying Eagle",
+  { title: "Flying Eagle", slug: "flying-eagle",
     desc: "Proyek individu menggunakan Unity sebagai tugas akhir UAS. Menekankan game development: mekanik permainan, animasi, dan interaksi pengguna.",
     icon: "/projects/flyingeagle.png", period: "Agu - Nov", year: 2025 },
-  { title: "Pinterest UI Clone",
+  { title: "Pinterest UI Clone", slug: "pinterest-ui-clone",
     desc: "Proyek tim menggunakan Flutter untuk mereplikasi UI Pinterest. Tanggung jawab pada implementasi desain, responsivitas, dan elemen interaktif.",
     icon: "/projects/pinterest.png", period: "Agu - Nov", year: 2025 },
 ];
 
 const row3: Project[] = [
-  { title: "Social Media App",
+  { title: "Social Media App", slug: "social-media-app",
     desc: "Aplikasi sosial dengan Laravel & PostgreSQL; fokus backend: Like/Comment Post, autentikasi, dan unggahan media.",
     icon: "/projects/socialmedia.png", period: "Mei - Juni", year: 2024 },
 ];
@@ -70,7 +71,7 @@ function ProjectCard({ p }: { p: Project }) {
           <p className="mt-1 text-sm text-white/80">{p.desc}</p>
           <div className="mt-3 flex items-center justify-between">
             <span className="inline-flex rounded-full bg-white/10 px-3 py-1 text-xs tracking-wide">{p.period}</span>
-            <a href={p.href ?? "#"} className="btn-soft">Details &gt;&gt;&gt;</a>
+            <a href={`/projects/${p.slug}`} className="btn-soft">Details &gt;&gt;&gt;</a>
           </div>
         </div>
       </div>
