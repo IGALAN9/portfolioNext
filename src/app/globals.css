@@ -26,6 +26,12 @@
     background: color-mix(in oklab, var(--color-brand) 14%, #000);
     color: white;
   }
+  .text-shadow {
+    text-shadow: 0 3px 10px rgba(0,0,0,.45);
+  }
+  .icon-tile {
+    @apply rounded-2xl bg-white/5 ring-1 ring-white/10 shadow-md;
+  }
 }
 
 /* Background gradien global */
