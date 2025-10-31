@@ -52,7 +52,7 @@ function RowIcons({ items }: { items: Icon[] }) {
 
 export default function Skills() {
   return (
-    <section className="relative mx-auto w-full max-w-7xl px-6 py-16 md:py-20">
+    <section className="relative isolate overflow-hidden mx-auto w-full max-w-7xl px-6 py-16 md:py-20">
       <div className="grid grid-cols-1 gap-12 md:grid-cols-[1.2fr_1fr]">
         {/* Kolom kiri */}
         <div className="space-y-8">

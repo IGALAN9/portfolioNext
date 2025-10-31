@@ -58,7 +58,7 @@ function Typing({
 
 export default function Hero() {
   return (
-    <section className="relative mx-auto w-full max-w-7xl px-6 pt-20 pb-24 md:pt-24 md:pb-32">
+    <section className="relative isolate overflow-hidden mx-auto w-full max-w-7xl px-6 pt-20 pb-24 md:pt-24 md:pb-32">
       {/* Konten grid */}
       <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2">
         {/* Kiri: Heading + typing */}

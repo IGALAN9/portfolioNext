@@ -81,7 +81,7 @@ function ProjectCard({ p }: { p: Project }) {
 
 export default function Projects() {
   return (
-    <section className="relative mx-auto w-full max-w-7xl px-6 py-16 md:py-20">
+    <section className="relative isolate overflow-hidden mx-auto w-full max-w-7xl px-6 py-16 md:py-20">
       <h2 className="text-center text-4xl font-semibold tracking-wider md:text-5xl mb-8">PROJECTS</h2>
 
       <div className="space-y-20">

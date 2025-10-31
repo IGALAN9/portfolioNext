@@ -103,12 +103,67 @@
     animation: caret-blink 1s step-end infinite;
     vertical-align: -0.15em;
   }
+    /* Garis vertikal putus-putus */
+  .nav-dotted-y {
+    width: 4px;
+    background-image: radial-gradient(currentColor 2px, transparent 2.6px);
+    background-size: 8px 14px;
+    background-repeat: repeat-y;
+    background-position: center top;
+    color: rgba(255,255,255,.7);
+  }
+
+  /* Titik & label */
+  .nav-dot {
+    @apply rounded-full transition-all duration-300;
+    width: 14px; height: 14px; background: rgba(255,255,255,.55);
+    box-shadow: 0 0 0 3px rgba(255,255,255,.15);
+  }
+  .nav-dot-active {
+    @apply ring-2 ring-white;
+    width: 16px; height: 16px; background: #fff;
+    box-shadow: 0 0 14px rgba(255,255,255,.45);
+  }
+  .nav-label {
+    @apply ml-3 text-base leading-none text-white/80 transition-colors duration-300;
+  }
+  .nav-label-active { @apply text-white; }
+    .feather {
+    position: relative;
+    isolation: isolate;
+  }
+  .feather::before,
+  .feather::after {
+    content: "";
+    position: absolute; left: 0; right: 0; height: 64px; pointer-events: none;
+  }
+  .feather::before { top: -64px;  background: linear-gradient(to bottom, rgba(0,0,0,.18), transparent); }
+  .feather::after  { bottom: -64px; background: linear-gradient(to top,    rgba(0,0,0,.18), transparent); }
+   .fade-lang {
+    @apply transition-opacity duration-500 ease-in-out;
+  }
+  .fade-lang-hidden {
+    opacity: 0;
+  }
+  @keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+  @layer utilities {
+  .animate-fade {
+    animation: fadeIn 0.6s ease-in-out;
+    }
+  }
 }
 
 /* Background gradien global */
 html, body {
   height: 100%;
-  background: radial-gradient(1000px 600px at 70% 10%, var(--color-bg-800) 0%, var(--color-bg-900) 80%);
+  background: radial-gradient(circle at top right, #21062c 0%, #0a0012 50%, #07000e 100%);
+  background-attachment: fixed;
   color: white;
   font-family: var(--font-sans);
 }

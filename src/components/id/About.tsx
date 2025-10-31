@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <section className="relative mx-auto w-full max-w-7xl ">
+    <section className="relative isolate overflow-hidden mx-auto w-full max-w-7xl px-6 py-16 md:py-30">
 
         <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-2">
             <div className="relative mx-auto md:mx-0">
