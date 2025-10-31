@@ -13,48 +13,42 @@ export default function StickySectionNav({
 }: { items?: Item[] }) {
   const [active, setActive] = useState<string>(items[0]?.id ?? "");
 
-  // observer untuk mendeteksi section yang sedang dominan di viewport
-  useEffect(() => {
-    const sections = items
-      .map(i => document.getElementById(i.id))
-      .filter(Boolean) as HTMLElement[];
+// ✅ Tentukan section aktif berdasarkan posisi scroll (tanpa IO)
+useEffect(() => {
+  const els = items
+    .map(i => document.getElementById(i.id))
+    .filter(Boolean) as HTMLElement[];
+  if (!els.length) return;
 
-    if (sections.length === 0) return;
+  const computeActive = () => {
+    const scrollY = window.scrollY;
+    const viewCenter = scrollY + window.innerHeight * 0.35; // ambil 35% dari tinggi viewport
+    let current = els[0].id;
 
-    const obs = new IntersectionObserver(
-      (entries) => {
-        // pilih entry dengan intersectionRatio terbesar di tengah layar
-        const visible = entries
-          .filter(e => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    for (const el of els) {
+      const top = scrollY + el.getBoundingClientRect().top;
+      const bottom = top + el.offsetHeight;
+      if (viewCenter >= top && viewCenter < bottom) current = el.id;
+    }
 
-        if (visible?.target?.id) setActive(visible.target.id);
-      },
-      {
-        root: null,
-        // threshold 0.6 artinya section dianggap aktif kalau 60% terlihat
-        threshold: [0.6],
-        // rootMargin untuk “menggeser” area fokus ke tengah layar
-        rootMargin: "-20% 0px -20% 0px",
-      }
-    );
+    // Saat mentok di paling bawah, pastikan yang terakhir aktif
+    const atBottom =
+      Math.ceil(window.innerHeight + window.scrollY) >=
+      document.documentElement.scrollHeight - 2;
+    if (atBottom) current = els[els.length - 1].id;
 
-    sections.forEach(s => obs.observe(s));
-    return () => obs.disconnect();
-  }, [items]);
-
-  const handleClick = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    setActive(current);
   };
 
-  const progress = useMemo(() => {
-    // progress global (opsional): 0..1 berdasarkan posisi scroll halaman
-    const h = typeof window !== "undefined" ? document.documentElement : null;
-    if (!h) return 0;
-    const total = h.scrollHeight - h.clientHeight;
-    return total > 0 ? h.scrollTop / total : 0;
-  }, []);
+  computeActive();
+  window.addEventListener("scroll", computeActive, { passive: true });
+  window.addEventListener("resize", computeActive);
+  return () => {
+    window.removeEventListener("scroll", computeActive);
+    window.removeEventListener("resize", computeActive);
+  };
+}, [items]);
+
 
   // Re-render progress on scroll (tanpa membebani)
   useEffect(() => {
@@ -93,6 +87,11 @@ export default function StickySectionNav({
         <nav className="relative flex flex-col gap-10">
           {items.map((it) => {
             const isActive = active === it.id;
+            const handleClick = (id: string) => {
+            const el = document.getElementById(id);
+            if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+            };
+
             return (
               <button
                 key={it.id}

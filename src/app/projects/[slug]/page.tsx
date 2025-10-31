@@ -26,15 +26,14 @@ const projects: Project[] = [
     title: { id: "StockFlow", en: "StockFlow" },
     period: "Feb - Jun • 2025",
     desc: {
-      id: "Aplikasi manajemen stok berbasis Electron dan MongoDB untuk PT Hanica Sukses Makmur. Fokus saya pada logika backend, perhitungan stok, dan integrasi realtime dengan UI.",
-      en: "A stock management app built with Electron and MongoDB for PT Hanica Sukses Makmur. I focused on backend logic, stock calculations, and real-time UI integration."
+      id: "Proyek tim yang dikembangkan menggunakan Electron dan MongoDB, dirancang khusus untuk PT Hanica Sukses Makmur. Aplikasi ini berfungsi untuk menghitung dan mengelola stok produk secara efisien dengan dukungan integrasi data dan antarmuka yang mudah digunakan. Dalam proyek ini, saya berperan dalam pengembangan backend, implementasi fungsi perhitungan utama, serta integrasi sistem dengan frontend agar data stok dapat diperbarui secara real-time.",
+      en: "A team-based project developed using Electron and MongoDB, created for PT Hanica Sukses Makmur. The application was designed to calculate and manage product stock efficiently through a user-friendly interface and real-time data integration. My role focused on backend development, implementing core calculation functions, and integrating the system with the frontend for seamless inventory updates."
     },
     tech: ["Electron", "MongoDB", "Node.js"],
     image: "/projects/stockflow.png",
-    images: ["/projects/stockflow-1.png", "/projects/stockflow-2.png"],
-    videos: [{ src: "/projects/stockflow-demo.mp4", type: "mp4" }],
+    // images: ["/projects/stockflow-1.png", "/projects/stockflow-2.png"],
     driveEmbeds: [
-      { title: "SRS (PDF)", url: "https://drive.google.com/file/d/FILE_ID/preview" },
+      { title: "Scrum Report", url: "https://drive.google.com/file/d/1d2d8sssab08yrUEDLWyOgeSZMfhaUxYz/preview" },
     ],
   },
   {
@@ -42,46 +41,51 @@ const projects: Project[] = [
     title: { id: "BalancedBliss", en: "BalancedBliss" },
     period: "Feb - Jun • 2025",
     desc: {
-      id: "Website tips kesehatan (Angular + PostgreSQL) dengan sistem login dan auto-logout. Saya mengembangkan fitur autentikasi dan session management.",
-      en: "A health tips website (Angular + PostgreSQL) with login and auto-logout. I worked on authentication and session management."
+      id: "Proyek tim yang dikembangkan menggunakan AngularJS, Bootstrap, dan PostgreSQL sebagai latihan untuk meningkatkan kemampuan full-stack development, dengan fokus utama pada pengembangan frontend. Website ini dirancang untuk memberikan tips dan informasi tentang kesehatan kepada pengguna. Dalam proyek ini, saya berperan dalam mengembangkan fitur login system dan automatic logout, memastikan keamanan serta pengalaman pengguna yang optimal.",
+      en: "A team-based web project developed using AngularJS, Bootstrap, and PostgreSQL to enhance full-stack development skills, with a primary focus on frontend implementation. The website provides users with health and wellness tips. My contributions included developing the login system and automatic logout features to ensure secure user authentication and an optimal browsing experience."
     },
     tech: ["Angular", "PostgreSQL", "Bootstrap"],
     image: "/projects/balancedbliss.png",
     images: ["/projects/balancedbliss-1.png"],
+    youtubeId: "bQ1Q5aZjp28",
   },
   {
     slug: "flying-eagle",
     title: { id: "Flying Eagle", en: "Flying Eagle" },
     period: "Agu - Nov • 2025",
     desc: {
-      id: "Game Unity individu sebagai proyek UAS. Saya membangun sistem gameplay, animasi, dan mekanik interaktif.",
-      en: "A solo Unity game for the final exam. I built gameplay systems, animations, and interactive mechanics."
+      id: "Proyek individu yang dikembangkan menggunakan Unity sebagai bagian dari tugas akhir UAS. Proyek ini bertujuan untuk mengasah kemampuan dalam pengembangan game serta memperdalam pemahaman mengenai mekanik, animasi, dan kontrol dalam dunia game development. Game Flying Eagle dibuat sebagai latihan dalam menerapkan logika permainan, desain level, serta interaksi pengguna secara dinamis.",
+      en: "An individual project developed using Unity as part of a final semester assignment. The project aimed to enhance my Unity development skills and explore the fundamentals of game mechanics, animation, and player control. Flying Eagle serves as a hands-on experience in implementing gameplay logic, level design, and user interaction in a dynamic environment."
     },
     tech: ["Unity", "C#"],
     image: "/projects/flyingeagle.png",
-    youtubeId: "dQw4w9WgXcQ",
+    driveEmbeds: [
+      { title: "Demo Video", url: "https://drive.google.com/file/d/1SZaNcwEXq0EgVY7P96TOSM3YO8a4b3JB/preview" },
+    ],
   },
   {
     slug: "pinterest-ui-clone",
     title: { id: "Pinterest UI Clone", en: "Pinterest UI Clone" },
     period: "Agu - Nov • 2025",
     desc: {
-      id: "Clone antarmuka Pinterest menggunakan Flutter. Fokus pada grid layout, interaksi, dan performa UI.",
-      en: "A Pinterest interface clone built with Flutter. Focused on grid layout, interactions, and UI performance."
+      id: "Proyek tim yang dikembangkan menggunakan Flutter, dengan tujuan untuk membuat ulang antarmuka pengguna (UI) dari aplikasi Pinterest. Dalam proyek ini, saya berperan dalam mengimplementasikan desain dan elemen visual agar menyerupai tampilan aplikasi asli, serta memastikan tata letak responsif dan interaktif di berbagai perangkat. Proyek ini berfokus pada kemampuan desain UI, kolaborasi tim, dan pemahaman struktur widget Flutter.",
+      en: "A team-based project developed using Flutter, aimed at recreating the user interface (UI) of the Pinterest application. My role involved implementing layouts and visual components to closely resemble the original app design, ensuring responsive and interactive display across different devices. The project focused on enhancing UI design skills, teamwork, and understanding of Flutter’s widget structure.."
     },
     tech: ["Flutter", "Dart"],
     image: "/projects/pinterest.png",
+    youtubeId: "6DG0LItimCQ",
   },
   {
     slug: "social-media-app",
     title: { id: "Social Media App", en: "Social Media App" },
     period: "Mei - Juni • 2024",
     desc: {
-      id: "Aplikasi sosial berbasis Laravel + PostgreSQL dengan fitur like, komentar, dan unggah media.",
-      en: "A social app using Laravel + PostgreSQL with likes, comments, and media uploads."
+      id: "Proyek tim yang dikembangkan menggunakan Laravel dan PostgreSQL, dengan fokus utama pada pengembangan backend. Aplikasi ini dirancang untuk menyediakan fitur interaksi sosial antar pengguna. Dalam proyek ini, saya berperan dalam pembuatan dan implementasi fitur Like Post dan Comment Post, yang memungkinkan pengguna untuk berinteraksi melalui unggahan mereka.",
+      en: "A team-based project developed using Laravel and PostgreSQL, primarily focused on backend development. The application is designed to provide interactive social features between users. In this project, I was responsible for creating and implementing the Like Post and Comment Post features, enabling users to engage and interact through their posts."
     },
     tech: ["Laravel", "PostgreSQL"],
     image: "/projects/socialmedia.png",
+    youtubeId: "mtiAr-gpcBY",
   },
 ];
 

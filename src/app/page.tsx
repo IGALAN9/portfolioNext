@@ -2,7 +2,6 @@
 import { useLang } from "./providers";
 import dynamic from "next/dynamic";
 import LanguageToggle from "@/components/LanguageToggle";
-import StickySectionNav from "@/components/StickySectionNav";
 // Indonesia
 import HeroID from "@/components/id/Hero";
 import AboutID from "@/components/id/About";
