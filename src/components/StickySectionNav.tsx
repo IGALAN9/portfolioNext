@@ -8,6 +8,7 @@ const SECTIONS: Item[] = [
   { id: "about", label: "About" },
   { id: "skills", label: "Skills" },
   { id: "projects", label: "Projects" },
+  { id: "organisations", label: "Organisations" },
 ];
 
 export default function StickySectionNav({ items = SECTIONS }: { items?: Item[] }) {
