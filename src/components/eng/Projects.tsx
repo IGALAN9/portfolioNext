@@ -13,25 +13,25 @@ type Project = {
 
 const row1: Project[] = [
   { title: "StockFlow", slug: "stockflow",
-    desc: "Proyek tim menggunakan Electron dan MongoDB untuk PT Hanica Sukses Makmur. Fokus pada backend, perhitungan stok, dan integrasi realtime ke frontend.",
+    desc: "Team project using Electron and MongoDB for PT Hanica Sukses Makmur. Focus on backend, stock calculations, and real-time integration to the frontend.",
     icon: "/projects/stockflow.png", period: "Feb - Jun", year: 2025 },
   { title: "BalancedBliss", slug: "balancedbliss",
-    desc: "Website tips kesehatan (Angular/Bootstrap/PostgreSQL). Fitur login system, auto-logout, dan peningkatan kapabilitas full-stack.",
+    desc: "Health tips website (Angular/Bootstrap/PostgreSQL). Features login system, auto-logout, and enhanced full-stack capabilities.",
     icon: "/projects/balancedbliss.png", period: "Feb - Jun", year: 2025 },
 ];
 
 const row2: Project[] = [
   { title: "Flying Eagle", slug: "flying-eagle",
-    desc: "Proyek individu menggunakan Unity sebagai tugas akhir UAS. Menekankan game development: mekanik permainan, animasi, dan interaksi pengguna.",
+    desc: "Individual project using Unity as a final assignment. Emphasizing game development: game mechanics, animation, and user interaction.",
     icon: "/projects/flyingeagle.png", period: "Agu - Nov", year: 2025 },
   { title: "Pinterest UI Clone", slug: "pinterest-ui-clone",
-    desc: "Proyek tim menggunakan Flutter untuk mereplikasi UI Pinterest. Tanggung jawab pada implementasi desain, responsivitas, dan elemen interaktif.",
+    desc: "Team project using Flutter to replicate Pinterest UI. Responsibilities included design implementation, responsiveness, and interactive elements.",
     icon: "/projects/pinterest.png", period: "Agu - Nov", year: 2025 },
 ];
 
 const row3: Project[] = [
   { title: "Social Media App", slug: "social-media-app",
-    desc: "Aplikasi sosial dengan Laravel & PostgreSQL; fokus backend: Like/Comment Post, autentikasi, dan unggahan media.",
+    desc: "Social application with Laravel & PostgreSQL; backend focus: Like/Comment Post, authentication, and media uploads.",
     icon: "/projects/socialmedia.png", period: "Mei - Juni", year: 2024 },
 ];
 
