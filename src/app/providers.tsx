@@ -16,7 +16,6 @@ export default function Providers({
   const [lang, setLang] = useState<Lang>(initialLang);
 
   useEffect(() => {
-    // sinkron ke localStorage & cookie agar client/server sama
     localStorage.setItem("lang", lang);
     document.cookie = `lang=${lang}; path=/; max-age=31536000; samesite=lax`;
     document.documentElement.lang = lang;

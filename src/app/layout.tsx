@@ -7,11 +7,9 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // ✅ cookies() sekarang async → WAJIB await
   const cookieStore = await cookies();
   const langCookie = cookieStore.get("lang")?.value;
 
-  // pastikan hanya "id" | "en"
   const initialLang: "id" | "en" = langCookie === "en" ? "en" : "id";
 
   return (

@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
-/* Design tokens */
+
 @theme {
   --color-bg-900: #0d0714;
   --color-bg-800: #170b24;
-  --color-accent: #7c3aed;      /* ungu */
-  --color-brand: #a78bfa;       /* ungu muda */
+  --color-accent: #7c3aed;      
+  --color-brand: #a78bfa;       
   --color-border: #6b6b83;
 
   --font-sans: ui-sans-serif, system-ui, -apple-system, "Inter", "Segoe UI",
@@ -13,7 +13,7 @@
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-/* Utilitas ekstra */
+
 @layer utilities {
   .text-shadow-lg {
     text-shadow: 0 6px 14px rgba(0,0,0,.45);
@@ -38,7 +38,6 @@
   .card-elev {
     box-shadow: 0 14px 28px rgba(0,0,0,.45), 0 8px 10px rgba(0,0,0,.3);
   }
-    /* Efek hover pada ikon / kartu Skills */
   .skill-card {
     @apply rounded-2xl bg-white/5 ring-1 ring-white/10 shadow-md p-3 transition-all duration-300 ease-out;
   }
@@ -59,10 +58,9 @@
   .dot {
     @apply size-3 rounded-full bg-white shadow-[0_0_0_3px_rgba(255,255,255,0.15)];
   }
-    /* Glow halus untuk garis & titik */
+
   .glow-soft { box-shadow: 0 0 0 6px color-mix(in oklab, white 18%, transparent); }
 
-  /* Dotted line bergerak pelan */
   @keyframes dash-scroll {
     from { background-position: 0 center; }
     to   { background-position: 16px center; }
@@ -70,8 +68,6 @@
   .anim-dash {
     animation: dash-scroll 1.6s linear infinite;
   }
-
-  /* Elevation card saat hover */
   .card-hover {
     @apply transition-transform duration-300 ease-out;
   }
@@ -79,13 +75,11 @@
     transform: translateY(-6px);
     box-shadow: 0 26px 50px rgba(0,0,0,.45);
   }
-
-  /* Tombol micro-interaction */
   .btn-soft {
     @apply rounded-xl bg-white/80 px-3 py-1.5 text-xs font-medium text-black transition;
   }
   .btn-soft:hover { @apply bg-white; transform: translateY(-1px) scale(1.03); }
-    /* Kedip kursor */
+
   @keyframes caret-blink {
     0%, 49% { opacity: 1; }
     50%, 100% { opacity: 0; }
@@ -96,14 +90,13 @@
   .typing-caret::after {
     content: "";
     display: inline-block;
-    width: 2px;                 /* tebal kursor */
-    height: 1em;                /* tinggi mengikuti font */
+    width: 2px;                 
+    height: 1em;                
     margin-left: 4px;
-    background: currentColor;   /* warna mengikuti teks */
+    background: currentColor;   
     animation: caret-blink 1s step-end infinite;
     vertical-align: -0.15em;
   }
-    /* Garis vertikal putus-putus */
   .nav-dotted-y {
     width: 4px;
     background-image: radial-gradient(currentColor 2px, transparent 2.6px);
@@ -112,8 +105,6 @@
     background-position: center top;
     color: rgba(255,255,255,.7);
   }
-
-  /* Titik & label */
   .nav-dot {
     @apply rounded-full transition-all duration-300;
     width: 14px; height: 14px; background: rgba(255,255,255,.55);
@@ -160,7 +151,6 @@
   .text-white\/85 { color: rgba(255,255,255,.85); }
 }
 
-/* Background gradien global */
 html, body {
   height: 100%;
   background: radial-gradient(circle at top right, #21062c 0%, #0a0012 50%, #07000e 100%);

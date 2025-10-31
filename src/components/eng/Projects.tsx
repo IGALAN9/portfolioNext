@@ -35,7 +35,6 @@ const row3: Project[] = [
     icon: "/projects/socialmedia.png", period: "Mei - Juni", year: 2024 },
 ];
 
-/* -------- dotted line lurus dengan state hover baris -------- */
 function DottedLine({ className = "" }: { className?: string }) {
   return (
     <div

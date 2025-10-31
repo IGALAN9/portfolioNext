@@ -27,7 +27,6 @@ const ORGS_EN: OrgItem[] = [
     ],
     gallery: ["/orgs/neon-cert-1.jpg"],
   },
-  // Add more items here …
 ];
 
 export default function OrganisationsEN() {

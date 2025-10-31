@@ -9,11 +9,12 @@ const SECTIONS: Item[] = [
   { id: "skills", label: "Skills" },
   { id: "projects", label: "Projects" },
   { id: "organisations", label: "Organisations" },
+  { id: "contact", label: "Contact" },
 ];
 
 export default function StickySectionNav({ items = SECTIONS }: { items?: Item[] }) {
   const [active, setActive] = useState(items[0]?.id ?? "home");
-  const [isWide, setIsWide] = useState(false); // >=1000px = desktop
+  const [isWide, setIsWide] = useState(false); 
   const vFill = useRef<HTMLDivElement>(null);
   const hFill = useRef<HTMLDivElement>(null);
 
@@ -77,9 +78,7 @@ export default function StickySectionNav({ items = SECTIONS }: { items?: Item[] 
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
-  // ==========================
-  // DESKTOP (≥1000px) — versi LAMA (tidak diubah)
-  // ==========================
+  // DESKTOP 
 if (isWide) {
   return (
      <aside
@@ -90,17 +89,13 @@ if (isWide) {
         z-40
       "
     >
-      {/* track & progress */}
       <div className="relative flex flex-col items-start">
-        {/* garis putus-putus */}
         <div className="nav-dotted-y absolute left-[6px] top-0 bottom-0"></div>
-        {/* progress global opsional (fill vertikal) */}
         <div
           id="navProgressFill"
           className="absolute left-[6px] top-0 origin-top w-1 bg-white/40 rounded-full"
           style={{ height: "100%", transform: "scaleY(0)" }}
         />
-        {/* items */}
         <nav className="relative flex flex-col gap-10">
           {items.map((it) => {
             const isActive = active === it.id;
@@ -129,9 +124,7 @@ if (isWide) {
   );
 }
 
-  // ==========================
-  // TABLET/HP (<1000px) — navbar bawah; dot aktif → label
-  // ==========================
+  // TABLET/HP 
   return (
     <aside
       aria-label="Section navigation"
@@ -158,7 +151,6 @@ if (isWide) {
           })}
         </nav>
 
-        {/* progress horizontal */}
         <div className="relative mt-3 h-1.5 rounded-full bg-white/20 overflow-hidden">
           <div
             ref={hFill}

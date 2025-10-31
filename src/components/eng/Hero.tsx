@@ -5,9 +5,9 @@ import Image from "next/image";
 /** Komponen kecil untuk efek ngetik */
 function Typing({
   words,
-  typingSpeed = 90,     // ms per karakter saat mengetik
-  deletingSpeed = 45,   // ms per karakter saat menghapus
-  holdTime = 1000,      // jeda setelah selesai mengetik 1 kata
+  typingSpeed = 90,     
+  deletingSpeed = 45,   
+  holdTime = 1000,      
   className = "",
 }: {
   words: string[];
@@ -16,14 +16,14 @@ function Typing({
   holdTime?: number;
   className?: string;
 }) {
-  const [index, setIndex] = useState(0);       // index kata aktif
-  const [sub, setSub] = useState("");          // substring yang tampil
-  const [del, setDel] = useState(false);       // sedang menghapus?
+  const [index, setIndex] = useState(0);      
+  const [sub, setSub] = useState("");          
+  const [del, setDel] = useState(false);       
 
   useEffect(() => {
     const current = words[index % words.length];
 
-    // tentukan delay tiap langkah
+   
     const delay = del ? deletingSpeed : typingSpeed;
 
     const timer = setTimeout(() => {

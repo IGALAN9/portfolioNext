@@ -9,7 +9,7 @@ type BiText = { id: string; en: string };
 type Project = {
   slug: string;
   title: BiText;
-  period: string; // kalau perlu bilingual juga, ubah ke BiText
+  period: string; 
   desc: BiText;
   tech: string[];
   image: string;
@@ -46,7 +46,6 @@ const projects: Project[] = [
     },
     tech: ["Angular", "PostgreSQL", "Bootstrap"],
     image: "/projects/balancedbliss.png",
-    images: ["/projects/balancedbliss-1.png"],
     youtubeId: "bQ1Q5aZjp28",
   },
   {
@@ -92,13 +91,11 @@ const projects: Project[] = [
 type Props = { params: Promise<{ slug: string }> };
 
 export default function ProjectDetail({ params }: Props) {
-  // Next.js 15: params adalah Promise → gunakan React.use() di client component
   const { slug } = use(params);
   const { lang } = useLang();
 
   const p = projects.find((x) => x.slug === slug);
 
-  // helper label bilingual cepat
   const L = (key: "backList" | "tech" | "gallery" | "video" | "demo" | "docs" | "notfound" | "backHome") => {
     const id = {
       backList: "← Kembali ke Projects",

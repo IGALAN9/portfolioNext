@@ -2,6 +2,7 @@
 import { useLang } from "./providers";
 import dynamic from "next/dynamic";
 import LanguageToggle from "@/components/LanguageToggle";
+import Contact from "@/components/Contact";
 
 // Indonesia
 import HeroID from "@/components/id/Hero";
@@ -27,7 +28,6 @@ export default function Page() {
       <LanguageToggle />
       <StickySectionNav />
 
-      {/* id untuk sticky nav kamu tetap sama */}
       <div key={lang} className="fade-lang opacity-100 animate-fade">
       {lang === "id" ? (
         <>
@@ -36,6 +36,7 @@ export default function Page() {
           <section id="skills"><SkillsID /></section>
           <section id="projects"><ProjectsID /></section>
           <section id="organisations"><OrganisationsID /></section>
+          <section id="contact"><Contact /></section>
         </>
       ) : (
         <>
@@ -44,6 +45,7 @@ export default function Page() {
           <section id="skills"><SkillsEN /></section>
           <section id="projects"><ProjectsEN /></section>
           <section id="organisations"><OrganisationsEN /></section>
+          <section id="contact"><Contact /></section>
         </>
       )}
       </div>
